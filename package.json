@@ -1,0 +1,16 @@
+{
+  "name": "the-lithub-app",
+  "version": "1.0.0",
+  "description": "\"LitHub\" is a portmanteau of \"Literary\" and \"Hub.\" A portmanteau is a linguistic blend of words, combining the sounds and meanings of two existing words to create a new one. In this case, \"Lit\" is short for \"Literary,\" and \"Hub\" implies a central place or a focal point.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sai Sandeep Acharjyo",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.0"
+  }
+}
