@@ -1,210 +1,345 @@
-module.exports.books = [
+module.exports = [
     {
-        Title: "Fundamentals of Wavelets",
-        Author: "Goswami, Jaideva",
-        Genre: "tech",
-        // "SuGenre: "signal_processing",
-        price: 22,
-        Publisher: "Wiley"
+        title: "Fundamentals of Wavelets",
+        author: "Goswami, Jaideva",
+        genre: "tech",
+        height: 228,
+        publisher: "Wiley"
     },
     {
-        Title: "Data Smart",
-        Author: "Foreman, John",
-        Genre: "tech",
-        // "SuGenre: "data_science",
-        price: 23,
-        Publisher: "Wiley"
+        title: "Data Smart",
+        author: "Foreman, John",
+        genre: "tech",
+        height: 235,
+        publisher: "Wiley"
     },
     {
-        Title: "God Created the Integers",
-        Author: "Hawking, Stephen",
-        Genre: "tech",
-        // "SuGenre: "mathematics",
-        price: 19,
-        Publisher: "Penguin"
+        title: "God Created the Integers",
+        author: "Hawking, Stephen",
+        genre: "tech",
+        height: 197,
+        publisher: "Penguin"
     },
     {
-        Title: "Superfreakonomics",
-        Author: "Dubner, Stephen",
-        Genre: "science",
-        // "SuGenre: "economics",
-        price: 17,
-        Publisher: "HarperCollins"
+        title: "Superfreakonomics",
+        author: "Dubner, Stephen",
+        genre: "science",
+        height: 179,
+        publisher: "HarperCollins"
     },
     {
-        Title: "Orientalism",
-        Author: "Said, Edward",
-        Genre: "nonfiction",
-        // "SuGenre: "history",
-        price: 19,
-        Publisher: "Penguin"
+        title: "Orientalism",
+        author: "Said, Edward",
+        genre: "nonfiction",
+        height: 197,
+        publisher: "Penguin"
     },
     {
-        Title: "Nature of Statistical Learning Theory, The",
-        Author: "Vapnik, Vladimir",
-        Genre: "tech",
-        // "SuGenre: "data_science",
-        price: 23,
-        Publisher: "Springer"
+        title: "Nature of Statistical Learning Theory, The",
+        author: "Vapnik, Vladimir",
+        genre: "tech",
+        height: 230,
+        publisher: "Springer"
     },
     {
-        Title: "Integration of the Indian States",
-        Author: "Menon, V P",
-        Genre: "nonfiction",
-        // "SuGenre: "history",
-        price: 21,
-        Publisher: "Orient Blackswan"
+        title: "Integration of the Indian States",
+        author: "Menon, V P",
+        genre: "nonfiction",
+        height: 217,
+        publisher: "Orient Blackswan"
     },
     {
-        Title: "Drunkard's Walk, The",
-        Author: "Mlodinow, Leonard",
-        Genre: "science",
-        // "SuGenre: "mathematics",
-        price: 19,
-        Publisher: "Penguin"
+        title: "Drunkard's Walk, The",
+        author: "Mlodinow, Leonard",
+        genre: "science",
+        height: 197,
+        publisher: "Penguin"
     },
     {
-        Title: "Image Processing & Mathematical Morphology",
-        Author: "Shih, Frank",
-        Genre: "tech",
-        // "SuGenre: "signal_processing",
-        price: 24,
-        Publisher: "CRC"
+        title: "Image Processing & Mathematical Morphology",
+        author: "Shih, Frank",
+        genre: "tech",
+        height: 241,
+        publisher: "CRC"
     },
     {
-        Title: "How to Think Like Sherlock Holmes",
-        Author: "Konnikova, Maria",
-        Genre: "nonfiction",
-        // "SuGenre: "psychology",
-        price: 24,
-        Publisher: "Penguin"
+        title: "How to Think Like Sherlock Holmes",
+        author: "Konnikova, Maria",
+        genre: "nonfiction",
+        height: 240,
+        publisher: "Penguin"
     },
     {
-        Title: "Data Scientists at Work",
-        Author: "Sebastian Gutierrez",
-        Genre: "tech",
-        // "SuGenre: "data_science",
-        price: 23,
-        Publisher: "Apress"
+        title: "Data Scientists at Work",
+        author: "Sebastian Gutierrez",
+        genre: "tech",
+        height: 230,
+        publisher: "Apress"
     },
     {
-        Title: "Slaughterhouse Five",
-        Author: "Vonnegut, Kurt",
-        Genre: "fiction",
-        // "SuGenre: "classic",
-        price: 19,
-        Publisher: "Random House"
+        title: "Slaughterhouse Five",
+        author: "Vonnegut, Kurt",
+        genre: "fiction",
+        height: 198,
+        publisher: "Random House"
     },
     {
-        Title: "Birth of a Theorem",
-        Author: "Villani, Cedric",
-        Genre: "science",
-        // "SuGenre: "mathematics",
-        price: 23,
-        Publisher: "Bodley Head"
+        title: "Birth of a Theorem",
+        author: "Villani, Cedric",
+        genre: "science",
+        height: 234,
+        publisher: "Bodley Head"
     },
     {
-        Title: "Structure & Interpretation of Computer Programs",
-        Author: "Sussman, Gerald",
-        Genre: "tech",
-        // "SuGenre: "computer_science",
-        price: 24,
-        Publisher: "MIT Press"
+        title: "Structure & Interpretation of Computer Programs",
+        author: "Sussman, Gerald",
+        genre: "tech",
+        height: 240,
+        publisher: "MIT Press"
     },
     {
-        Title: "Age of Wrath, The",
-        Author: "Eraly, Abraham",
-        Genre: "nonfiction",
-        // "SuGenre: "history",
-        price: 23,
-        Publisher: "Penguin"
+        title: "Age of Wrath, The",
+        author: "Eraly, Abraham",
+        genre: "nonfiction",
+        height: 238,
+        publisher: "Penguin"
     },
     {
-        Title: "Trial, The",
-        Author: "Kafka, Frank",
-        Genre: "fiction",
-        // "SuGenre: "classic",
-        price: 19,
-        Publisher: "Random House"
+        title: "Trial, The",
+        author: "Kafka, Frank",
+        genre: "fiction",
+        height: 198,
+        publisher: "Random House"
     },
     {
-        Title: "Statistical Decision Theory",
-        Author: "Pratt, John",
-        Genre: "tech",
-        // "SuGenre: "data_science",
-        price: 23,
-        Publisher: "MIT Press"
+        title: "Statistical Decision Theory",
+        author: "Pratt, John",
+        genre: "tech",
+        height: 236,
+        publisher: "MIT Press"
     },
     {
-        Title: "Data Mining Handbook",
-        Author: "Nisbet, Robert",
-        Genre: "tech",
-        // "SuGenre: "data_science",
-        price: 24,
-        Publisher: "Apress"
+        title: "Data Mining Handbook",
+        author: "Nisbet, Robert",
+        genre: "tech",
+        height: 242,
+        publisher: "Apress"
     },
     {
-        Title: "New Machiavelli, The",
-        Author: "Wells, H. G.",
-        Genre: "fiction",
-        // "SuGenre: "novel",
-        price: 18,
-        Publisher: "Penguin"
+        title: "New Machiavelli, The",
+        author: "Wells, H. G.",
+        genre: "fiction",
+        height: 180,
+        publisher: "Penguin"
     },
     {
-        Title: "Physics & Philosophy",
-        Author: "Heisenberg, Werner",
-        Genre: "philosophy",
-        // "SuGenre: "science",
-        price: 19,
-        Publisher: "Penguin"
+        title: "Physics & Philosophy",
+        author: "Heisenberg, Werner",
+        genre: "philosophy",
+        height: 197,
+        publisher: "Penguin"
     },
     {
-        Title: "Making Software",
-        Author: "Oram, Andy",
-        Genre: "tech",
-        // "SuGenre: "computer_science",
-        price: 23,
-        Publisher: "O'Reilly"
+        title: "Making Software",
+        author: "Oram, Andy",
+        genre: "tech",
+        height: 232,
+        publisher: "O'Reilly"
     },
     {
-        Title: "Analysis, Vol I",
-        Author: "Tao, Terence",
-        Genre: "tech",
-        // "SuGenre: "mathematics",
-        price: 24,
-        Publisher: "HBA"
+        title: "Analysis, Vol I",
+        author: "Tao, Terence",
+        genre: "tech",
+        height: 248,
+        publisher: "HBA"
     },
     {
-        Title: "Machine Learning for Hackers",
-        Author: "Conway, Drew",
-        Genre: "tech",
-        // "SuGenre: "data_science",
-        price: 23,
-        Publisher: "O'Reilly"
+        title: "Machine Learning for Hackers",
+        author: "Conway, Drew",
+        genre: "tech",
+        height: 233,
+        publisher: "O'Reilly"
     },
     {
-        Title: "Signal and the Noise, The",
-        Author: "Silver, Nate",
-        Genre: "tech",
-        // "SuGenre: "data_science",
-        price: 23,
-        Publisher: "Penguin"
+        title: "Signal and the Noise, The",
+        author: "Silver, Nate",
+        genre: "tech",
+        height: 233,
+        publisher: "Penguin"
     },
     {
-        Title: "Python for Data Analysis",
-        Author: "McKinney, Wes",
-        Genre: "tech",
-        // "SuGenre: "data_science",
-        price: 23,
-        Publisher: "O'Reilly"
+        title: "Python for Data Analysis",
+        author: "McKinney, Wes",
+        genre: "tech",
+        height: 233,
+        publisher: "O'Reilly"
     },
     {
-        Title: "Introduction to Algorithms",
-        Author: "Cormen, Thomas",
-        Genre: "tech",
-        // "SuGenre: "computer_science",
-        price: 23,
-        Publisher: "MIT Press"
+        title: "Introduction to Algorithms",
+        author: "Cormen, Thomas",
+        genre: "tech",
+        height: 234,
+        publisher: "MIT Press"
     },
-]
+    {
+        title: "Beautiful and the Damned, The",
+        author: "Deb, Siddhartha",
+        genre: "nonfiction",
+        height: 198,
+        publisher: "Penguin"
+    },
+    {
+        title: "Outsider, The",
+        author: "Camus, Albert",
+        genre: "fiction",
+        height: 198,
+        publisher: "Penguin"
+    },
+    {
+        title: "Complete Sherlock Holmes, The - Vol I",
+        author: "Doyle, Arthur Conan",
+        genre: "fiction",
+        height: 176,
+        publisher: "Random House"
+    },
+    {
+        title: "Complete Sherlock Holmes, The - Vol II",
+        author: "Doyle, Arthur Conan",
+        genre: "fiction",
+        height: 176,
+        publisher: "Random House"
+    },
+    {
+        title: "Wealth of Nations, The",
+        author: "Smith, Adam",
+        genre: "science",
+        height: 175,
+        publisher: "Random House"
+    },
+    {
+        title: "Pillars of the Earth, The",
+        author: "Follett, Ken",
+        genre: "fiction",
+        height: 176,
+        publisher: "Random House"
+    },
+    {
+        title: "Mein Kampf",
+        author: "Hitler, Adolf",
+        genre: "nonfiction",
+        height: 212,
+        publisher: "Rupa"
+    },
+    {
+        title: "Tao of Physics, The",
+        author: "Capra, Fritjof",
+        genre: "science",
+        height: 179,
+        publisher: "Penguin"
+    },
+    {
+        title: "Surely You're Joking Mr Feynman",
+        author: "Feynman, Richard",
+        genre: "science",
+        height: 198,
+        publisher: "Random House"
+    },
+    {
+        title: "Farewell to Arms, A",
+        author: "Hemingway, Ernest",
+        genre: "fiction",
+        height: 179,
+        publisher: "Rupa"
+    },
+    {
+        title: "Veteran, The",
+        author: "Forsyth, Frederick",
+        genre: "fiction",
+        height: 177,
+        publisher: "Transworld"
+    },
+    {
+        title: "False Impressions",
+        author: "Archer, Jeffery",
+        genre: "fiction",
+        height: 177,
+        publisher: "Pan"
+    },
+    {
+        title: "Last Lecture, The",
+        author: "Pausch, Randy",
+        genre: "nonfiction",
+        height: 197,
+        publisher: "Hyperion"
+    },
+    {
+        title: "Return of the Primitive",
+        author: "Rand, Ayn",
+        genre: "philosophy",
+        height: 202,
+        publisher: "Penguin"
+    },
+    {
+        title: "Jurassic Park",
+        author: "Crichton, Michael",
+        genre: "fiction",
+        height: 174,
+        publisher: "Random House"
+    },
+    {
+        title: "Russian Journal, A",
+        author: "Steinbeck, John",
+        genre: "nonfiction",
+        height: 196,
+        publisher: "Penguin"
+    },
+    {
+        title: "Tales of Mystery and Imagination",
+        author: "Poe, Edgar Allen",
+        genre: "fiction",
+        height: 172,
+        publisher: "HarperCollins"
+    },
+    {
+        title: "Freakonomics",
+        author: "Dubner, Stephen",
+        genre: "science",
+        height: 197,
+        publisher: "Penguin"
+    },
+    {
+        title: "Hidden Connections, The",
+        author: "Capra, Fritjof",
+        genre: "science",
+        height: 197,
+        publisher: "HarperCollins"
+    },
+    {
+        title: "Story of Philosophy, The",
+        author: "Durant, Will",
+        genre: "philosophy",
+        height: 170,
+        publisher: "Pocket"
+    },
+    {
+        title: "Asami Asami",
+        author: "Deshpande, P L",
+        genre: "fiction",
+        height: 205,
+        publisher: "Mauj"
+    },
+    {
+        title: "Journal of a Novel",
+        author: "Steinbeck, John",
+        genre: "fiction",
+        height: 196,
+        publisher: "Penguin"
+    },
+    {
+        title: "Once There Was a War",
+        author: "Steinbeck, John",
+        genre: "nonfiction",
+        height: 196,
+        publisher: "Penguin"
+    }
+];

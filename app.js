@@ -19,10 +19,14 @@ app.get('/' , (req,res) => {
     res.render('home')
 })
 
-app.get('/createBook', async (req,res) => {
-    const book = new Book({ name: "One Night @ Call Center" , author: "Chetan Bhagat"})
-    await book.save()
-    res.send(book)
+app.get('/books', async (req,res) => {
+    const books = await Book.find({})
+    res.render('books/index' , {books})
+})
+
+app.get('/books/:id' , async (req,res) => {
+    const book = await Book.findById(req.params.id)
+    res.render('books/show' , {book})
 })
 
 app.listen(3000 , (re,res) => {
