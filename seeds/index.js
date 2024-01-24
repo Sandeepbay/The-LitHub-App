@@ -12,10 +12,14 @@ db.once('open' , () => {
 
 const seedDB = async () => {
     await Book.deleteMany({})
+    price = Math.floor(Math.random() * 20) + 10
     for (let book of books) {
         const newBook = new Book({
             title: book.title,
-            author: book.author
+            author: book.author,
+            image: `https://loremflickr.com/300/300/books?random=5`,
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate vel necessitatibus sed sint quibusdam, ad numquam laborum dolorem quia provident aliquam id modi dolores rem! Natus hic accusantium quo! Animi.Excepturi facere numquam ab tenetur. Officiis sit, magni iusto vero temporibus neque quam voluptates nesciunt, eius vel odio recusandae mollitia unde. Minus ratione officiis quas nostrum laudantium sunt, cumque nulla.',
+            price,
         })
         await newBook.save()
     }

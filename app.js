@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const methodOveride = require('method-override')
+const ejsMate = require('ejs-mate')
 const app = express()
 const path = require('path')
 const Book = require('./models/book')
@@ -12,6 +13,8 @@ db.on('error' , console.error.bind(console , 'Connection error:'))
 db.once('open' , () => {
     console.log("Database Connected")
 })
+
+app.engine('ejs' , ejsMate)
 
 app.set('view engine' , 'ejs')
 app.set('views' , path.join(__dirname, 'views'))
