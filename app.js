@@ -35,10 +35,15 @@ app.get('/books/new' , (req,res) => {
     res.render('books/new')
 })
 
-app.post('/books' , async(req,res) => {
-    const book = new Book(req.body.book)
-    await book.save()
-    res.redirect(`/books/${book._id}`)
+app.post('/books' , async (req,res,next) => {
+    try {        
+        const book = new Book(req.body.book)
+        await book.save()
+        res.redirect(`/books/${book._id}`)
+    } catch(e) {
+        next(e)
+    }
+    
 })
 
 app.get('/books/:id' , async (req,res) => {
@@ -61,6 +66,10 @@ app.delete('/books/:id' , async(req,res) => {
     const {id} = req.params
     await Book.findByIdAndDelete(id)
     res.redirect('/books')
+})
+
+app.use((err,req,res,next) => {
+    res.send("Something went wrong")
 })
 
 app.listen(3000 , () => {
