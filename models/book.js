@@ -6,7 +6,13 @@ const bookSchema = new Schema({
     author: String,
     price: Number,
     description: String,
-    image: String
+    image: String,
+    reviews: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    ]
 })
 
 module.exports = new mongoose.model('Book' , bookSchema)

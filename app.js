@@ -4,10 +4,11 @@ const methodOveride = require('method-override')
 const ejsMate = require('ejs-mate')
 const catchAsync = require('./Utility/catchAsync')
 const ExpressError = require('./Utility/ExpressError')
-const { bookSchema } = require('./schemas')
+const { bookSchema , reviewSchema } = require('./schemas')
 const app = express()
 const path = require('path')
 const Book = require('./models/book')
+const Review = require('./models/review')
 
 mongoose.connect('mongodb://localhost:27017/the-lithub')
 
@@ -27,6 +28,17 @@ app.use(methodOveride('_method'))
 
 const validateCampground = (req,res,next) => {
     const { error } = bookSchema.validate(req.body)
+    if (error) {
+        const msg = error.details.map(el => el.message).join(",")
+        throw new ExpressError(msg , 400)
+    }
+    else {
+        next()
+    }
+}
+
+const validateReview = (req,res,next) => {
+    const { error } = reviewSchema.validate(req.body)
     if (error) {
         const msg = error.details.map(el => el.message).join(",")
         throw new ExpressError(msg , 400)
@@ -57,7 +69,7 @@ app.post('/books' , validateCampground ,catchAsync(async (req,res,next) => {
 }))
 
 app.get('/books/:id' , catchAsync(async (req,res) => {
-    const book = await Book.findById(req.params.id)
+    const book = await Book.findById(req.params.id).populate('reviews')
     res.render('books/show' , {book})
 }))
 
@@ -76,6 +88,15 @@ app.delete('/books/:id' , catchAsync(async(req,res) => {
     const {id} = req.params
     await Book.findByIdAndDelete(id)
     res.redirect('/books')
+}))
+
+app.post('/books/:id/reviews' , validateReview ,catchAsync(async(req,res) => {
+    const book = await Book.findById(req.params.id)
+    const review = new Review(req.body.review)
+    book.reviews.push(review)
+    await book.save()
+    await review.save()
+    res.redirect(`/books/${book._id}`)
 }))
 
 app.all('*' , (req,res,next) => {
