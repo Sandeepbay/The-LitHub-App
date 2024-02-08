@@ -99,6 +99,13 @@ app.post('/books/:id/reviews' , validateReview ,catchAsync(async(req,res) => {
     res.redirect(`/books/${book._id}`)
 }))
 
+app.delete('/books/:id/reviews/:reviewId' , catchAsync(async(req,res) => {
+    const { id , reviewId } = req.params
+    await Book.findByIdAndUpdate(id , { $pull: { reviews: reviewId }})
+    await Review.findByIdAndDelete(reviewId)
+    res.redirect(`/books/${id}`)
+}))
+
 app.all('*' , (req,res,next) => {
     next(new ExpressError('Page Not Found' , 404))
 })
