@@ -26,4 +26,4 @@ bookSchema.post('findOneAndDelete' , async function(doc) {
     }
 })
 
-module.exports = new mongoose.model('Book' , bookSchema)
+module.exports = new mongoose.model('Book', bookSchema);
