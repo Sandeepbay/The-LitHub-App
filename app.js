@@ -11,6 +11,8 @@ const Book = require('./models/book')
 const Review = require('./models/review')
 const booksRoute = require('./routes/booksRoute')
 const reviewRoute = require('./routes/reviewRoute')
+const session = require('express-session')
+const flash = require('connect-flash')
 
 mongoose.connect('mongodb://localhost:27017/the-lithub')
 
@@ -27,6 +29,26 @@ app.set('views' , path.join(__dirname, 'views'))
 
 app.use(express.urlencoded({ extended: true}))
 app.use(methodOveride('_method'))
+app.use(express.static(path.join(__dirname , 'public')))
+
+const sessionConfig = {
+    secret: 'thishsouldbeagoodsecret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        expires: Date.now() + 1000 * 60 * 60 * 4 * 7,
+        maxAge: 1000 * 60 * 60 * 4 * 7
+    }
+}
+app.use(session(sessionConfig))
+
+app.use(flash())
+app.use((req,res,next) => {
+    res.locals.success = req.flash('success')
+    res.locals.error = req.flash('error')
+    next()
+})
 
 
 app.get('/' , (req,res) => {
