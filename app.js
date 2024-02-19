@@ -13,6 +13,9 @@ const booksRoute = require('./routes/booksRoute')
 const reviewRoute = require('./routes/reviewRoute')
 const session = require('express-session')
 const flash = require('connect-flash')
+const passport = require('passport')
+const strategyLocal = require('passport-local')
+const User = require('./models/user')
 
 mongoose.connect('mongodb://localhost:27017/the-lithub')
 
@@ -50,6 +53,18 @@ app.use((req,res,next) => {
     next()
 })
 
+app.use(passport.initialize())
+app.use(passport.session())
+passport.use(new strategyLocal(User.authenticate()))
+
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
+// app.get('/fakeUser' , async(req,res) => {
+//     const user = new User({email: 'sandeepbay@gmail.com' , username: 'Sandeepbay'})
+//     const newUser = await User.register(user , 'chicken')
+//     res.send(newUser)
+// })
 
 app.get('/' , (req,res) => {
     res.render('home')
