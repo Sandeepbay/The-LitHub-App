@@ -11,6 +11,7 @@ const Book = require('./models/book')
 const Review = require('./models/review')
 const booksRoute = require('./routes/booksRoute')
 const reviewRoute = require('./routes/reviewRoute')
+const userRoute = require('./routes/userRoutes')
 const session = require('express-session')
 const flash = require('connect-flash')
 const passport = require('passport')
@@ -72,6 +73,7 @@ app.get('/' , (req,res) => {
 
 app.use('/books' , booksRoute)
 app.use('/books/:id/reviews' , reviewRoute)
+app.use('/' , userRoute)
 
 
 app.all('*' , (req,res,next) => {
