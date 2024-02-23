@@ -29,13 +29,14 @@ router.get('/new' ,isLoggedIn , (req,res) => {
 router.post('/' , isLoggedIn ,validateCampground ,catchAsync(async (req,res,next) => {  
     // if(!req.body.book) throw new ExpressError('Invalid Book Data' , 400)   
     const book = new Book(req.body.book)
+    book.owner = req.user._id
     await book.save()
     req.flash('success' , "Successfully Created a Book")
     res.redirect(`/books/${book._id}`)
 }))
 
 router.get('/:id' , catchAsync(async (req,res) => {
-    const book = await Book.findById(req.params.id).populate('reviews')
+    const book = await Book.findById(req.params.id).populate('reviews').populate('owner')
     if(!book) {
         req.flash('error' , 'Cannot find that book')
         return res.redirect('/books')

@@ -8,6 +8,10 @@ const bookSchema = new Schema({
     price: Number,
     description: String,
     image: String,
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     reviews: [
         {
             type: Schema.Types.ObjectId,

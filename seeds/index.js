@@ -17,6 +17,7 @@ const seedDB = async () => {
         const newBook = new Book({
             title: book.title,
             author: book.author,
+            owner: '65d8b250749cfa198c19730a',
             image: `https://loremflickr.com/300/300/books?random=5`,
             description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate vel necessitatibus sed sint quibusdam, ad numquam laborum dolorem quia provident aliquam id modi dolores rem! Natus hic accusantium quo! Animi.Excepturi facere numquam ab tenetur. Officiis sit, magni iusto vero temporibus neque quam voluptates nesciunt, eius vel odio recusandae mollitia unde. Minus ratione officiis quas nostrum laudantium sunt, cumque nulla.',
             price,
