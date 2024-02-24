@@ -20,7 +20,7 @@ module.exports.storeReturnTo = (req, res, next) => {
     next();
 }
 
-module.exports.validateCampground = (req,res,next) => {
+module.exports.validateBook = (req,res,next) => {
     const { error } = bookSchema.validate(req.body)
     if (error) {
         const msg = error.details.map(el => el.message).join(",")
