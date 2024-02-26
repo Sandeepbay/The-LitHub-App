@@ -6,12 +6,16 @@ const { bookSchema} = require('../schemas')
 const ExpressError = require('../Utility/ExpressError')
 const {isLoggedIn , validateBook , isOwner} = require('../middleware')
 const book = require('../controllers/book')
+const multer  = require('multer')
+const {storage} = require('../cloudinary')
+const upload = multer({ storage })
 
 router.get('/', catchAsync(book.index))
 
 router.get('/new' ,isLoggedIn , book.renderNewForm)
 
-router.post('/' , isLoggedIn ,validateBook ,catchAsync(book.createBook))
+router.post('/' , isLoggedIn , upload.array('image') , validateBook ,catchAsync(book.createBook))
+
 
 router.get('/:id' , catchAsync(book.showBook))
 

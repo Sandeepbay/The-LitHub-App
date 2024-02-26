@@ -2,7 +2,7 @@
 <div class="row">
     <h1 class="text-center">New Book</h1>
     <div class="col-6 offset-3">
-        <form action="/books" method="POST">
+        <form action="/books" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label" for="title">Title</label>
                 <input class="form-control" type="text" id="title" name="book[title]" required>
@@ -11,10 +11,11 @@
                 <label class="form-label" for="author">Author</label>
                 <input class="form-control" type="text" id="author" name="book[author]" required>
             </div>
-            <div class="mb-3">
+            <input type="file" name="image" id="" multiple>
+            <!-- <div class="mb-3">
                 <label class="form-label" for="image">Image Url</label>
                 <input class="form-control" type="text" id="image" name="book[image]" required>
-            </div>
+            </div> -->
             <div class="mb-3">
                 <label class="form-label" for="price">Book Price</label>
                 <div class="input-group">

@@ -7,7 +7,12 @@ const bookSchema = new Schema({
     author: String,
     price: Number,
     description: String,
-    image: String,
+    images: [
+        {
+            url: String,
+            filename: String
+        }
+    ],
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'User'

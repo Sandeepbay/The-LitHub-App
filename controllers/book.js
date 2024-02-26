@@ -11,6 +11,7 @@ module.exports.renderNewForm = (req,res) => {
 
 module.exports.createBook = async (req,res,next) => {  
     const book = new Book(req.body.book)
+    book.images = req.files.map(f => ({ url: f.path , filename: f.filename }))
     book.owner = req.user._id
     await book.save()
     req.flash('success' , "Successfully Created a Book")
