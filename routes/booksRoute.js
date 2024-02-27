@@ -21,7 +21,7 @@ router.get('/:id' , catchAsync(book.showBook))
 
 router.get('/:id/edit' , isLoggedIn , isOwner ,catchAsync(book.renderEditForm))
 
-router.put('/:id' , isLoggedIn , isOwner ,validateBook ,catchAsync(book.editBook))
+router.put('/:id' , isLoggedIn , isOwner , upload.array('image') , validateBook ,catchAsync(book.editBook))
 
 router.delete('/:id' , isLoggedIn, isOwner ,catchAsync(book.deleteBook))
 

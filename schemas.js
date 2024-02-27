@@ -7,7 +7,8 @@ module.exports.bookSchema = Joi.object({
         price: Joi.number().min(0).required(),
         // image: Joi.string(),
         description: Joi.string().required()
-    }).required()
+    }).required(),
+    deleteImages: Joi.array()
 })
 
 module.exports.reviewSchema = Joi.object({
