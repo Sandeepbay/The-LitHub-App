@@ -47,13 +47,15 @@ app.use(express.static(path.join(__dirname , 'public')))
 const store = new MongoDBStore({
     url: dbUrl,
     touchAfter: 24 * 60 * 60,
-    secret: 'thishsouldbeagoodsecret'
+    secret: process.env.SECERET
 });
+
+// console.log(process.env.SECERET)
 
 const sessionConfig = {
     store,
     name: 'session',
-    secret: 'thishsouldbeagoodsecret',
+    secret: process.env.SECERET,
     resave: false,
     saveUninitialized: true,
     cookie: {
